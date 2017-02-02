@@ -2,6 +2,9 @@
 logs
 *.log
 npm-debug.log*
+*.csv
+.RData
+.Rhistory
 
 # Runtime data
 pids
