@@ -22,6 +22,10 @@ with open(sys.argv[2], 'w') as outFile:
                 exit(0)
 
             #Fix the file here
+            if (cur == "\\" and last == "\\"):
+                cur = ""
+                last = ""
+
             if (cur == '"' and last != "\\"):
                 inQuotes = not inQuotes
 
