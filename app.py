@@ -4,9 +4,9 @@ if len(sys.argv) < 3:
     print("Usage: python app.py infile outfile")
     exit(1)
 
-with open(sys.argv[2], 'w', encoding='utf-8') as outFile:
+with open(sys.argv[2], 'w') as outFile:
 
-    with open(sys.argv[1], 'r', encoding='utf-8') as inFile:
+    with open(sys.argv[1], 'r') as inFile:
         inQuotes = False
         last = ""
 
