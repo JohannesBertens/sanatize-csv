@@ -1,16 +1,24 @@
 import sys
+import os
 
 if len(sys.argv) < 3:
     print("Usage: python app.py infile outfile")
     exit(1)
 
-with open(sys.argv[2], 'w') as outFile:
+size = os.stat(sys.argv[1]).st_size
+step = int(size / 100)
+with open(sys.argv[2], 'w', encoding='utf-8') as outFile:
 
-    with open(sys.argv[1], 'r') as inFile:
+    with open(sys.argv[1], 'r', encoding='utf-8') as inFile:
         inQuotes = False
         last = ""
 
+        count = 0
         while True:
+            count = count + 1
+            if ((count % step) == 0):
+                print(str(int(100 * (count / size))) + "% done.")
+
             try:
                 cur = inFile.read(1)
             except UnicodeError:

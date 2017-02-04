@@ -3,8 +3,10 @@ logs
 *.log
 npm-debug.log*
 *.csv
-.RData
+*.RData
 .Rhistory
+*.zip
+*.tmp
 
 # Runtime data
 pids
